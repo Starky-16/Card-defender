@@ -1,41 +1,57 @@
-# Self-Balancing-Two-Wheel-Robot-Program
-## 📌 Objective
-A simulated robot that balances itself like a **Segway** using **PID control**.
+# Card defender
+This project focuses on detecting fraudulent transactions using machine learning.
+Credit card fraud is a critical financial crime, and early detection can help prevent massive losses.
+The goal is to build a model that can classify whether a given transaction is fraudulent or genuine.
 
----
+📌 Problem Statement
 
-## 🛠 Tools & Technologies
-- **ROS** (Robot Operating System)
-- **Gazebo** (Simulation environment)
-- **Python** (Control & PID implementation)
+Given a dataset of credit card transactions, the task is to develop a model that can classify fraud (1) vs non-fraud (0).
+The dataset is highly imbalanced, with very few fraud transactions compared to genuine ones — making this an excellent problem for classification and imbalance handling techniques.
 
----
+🔍 Key Features of the Project
 
-## ⚙️ Features
-- PID control for **balancing** and movement  
-- Simulated **IMU sensor fusion**  
-- Basic **user-controlled navigation**  
+✔ Data preprocessing & feature scaling
+✔ Handling class imbalance (SMOTE / Undersampling / Oversampling)
+✔ Multiple ML algorithms tested
+✔ Model evaluation using advanced metrics
+✔ Visualization of fraud vs non-fraud patterns
+✔ Final deployed notebook/script included
 
----
+🗂 Dataset
 
-## 🚀 How to Run
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/Starky-16/Self-Balancing-Two-Wheel-Robot-Program.git
-   cd Self-Balancing-Two-Wheel-Robot-Program
-##Install requirements:
+Source: Kaggle – Credit Card Fraud Detection Dataset
 
-bash
-Copy code
-pip install -r requirements.txt
+Contains 284,807 transactions
 
-##Launch simulation:
-bash
-Copy code
-roslaunch launch/robot_sim.launch
+Fraudulent cases: 492 (0.172% of dataset)
 
-##Run the control program:
+Column	Description
+Time	Seconds elapsed between transaction & first transaction
+V1-V28	PCA-transformed features (confidentiality protected)
+Amount	Transaction amount
+Class	1 = Fraud, 0 = Genuine
+📦 Technologies Used
+Tool / Library	Purpose
+Python	Programming
+Pandas, NumPy	Data handling
+Scikit-Learn	Model training + evaluation
+Matplotlib / Seaborn	Visualization
+SMOTE / Imbalanced-Learn	Balancing dataset
+Logistic Regression / Random Forest / XGBoost	Classifiers
+🔥 Workflow — Step-by-Step
 
-bash
-Copy code
-python3 src/robot_control.py
+Load & explore dataset
+
+Check null values + clean data
+
+Visualize fraud distribution
+
+Apply scaling using StandardScaler
+
+Handle class imbalance (SMOTE/RUS/Oversampling)
+
+Train ML Models
+
+Evaluate using metrics
+
+Save final model
